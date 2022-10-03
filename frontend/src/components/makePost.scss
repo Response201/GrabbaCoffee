@@ -1,0 +1,92 @@
+.makePostContent {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  background-color: var(--bg-primary);
+  height: 170px;
+  width: 80%;
+  min-width: 300px;
+  max-width: 450px;
+  padding: 15px 15px 10px 15px;
+  margin-bottom: 20px;
+  box-shadow: 5px 10px 1px var(--bg-shadow);
+}
+
+.textInputContainer {
+  grid-row: 1/4;
+
+  textarea {
+    height: 98%;
+    width: 95%;
+    resize: none;
+    border: 1px var(--button-secondary) solid;
+    padding: 5px 10px 10px 10px;
+    margin: 7px 0;
+    overflow: hidden;
+    text-shadow: 1px 1px 1px var(--color-shadow);
+    font-size: clamp(19px, 2vw, 24px);
+    line-height: 23px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+    font-family: "League Spartan", sans-serif;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+
+  textarea:focus:invalid {
+    outline: none;
+    background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
+      no-repeat 95% 50% rgb(255, 255, 255);
+    background-size: 20px;
+  }
+}
+
+.submitButton {
+  grid-row: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px 0 0;
+  height: 100%;
+  p {
+    color: var(--color-secondary);
+    font-size: 12px;
+    margin: 0;
+  }
+
+  button {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: none;
+    border-radius: 5px 0 5px 0;
+    transition: ease-in 0.2s;
+    color: var(--color-primary);
+    font-size: clamp(16px, 5vw, 18px);
+    font-weight: 600;
+    font-family: "Arima", cursive;
+  }
+
+  .buttonInvalid {
+    background-color: var(--button-invaild);
+    color: var(--color-secondary);
+  }
+
+  .buttonVaild {
+    background-color: var(--button-primary);
+  }
+  .buttonVaild:hover {
+    background-color: var(--button-secondary);
+    color: var(--color-shadow);
+    transform: scale(97%);
+  }
+
+  img {
+    width: 15px;
+    height: 17px;
+  }
+}
