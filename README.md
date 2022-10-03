@@ -1,3 +1,1 @@
-# GrabbaCoffee
-
-https://grabacoffee.netlify.app/
+https://grabacoffee.netlify.app
