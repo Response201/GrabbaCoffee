@@ -11,5 +11,9 @@
   command = "npm run build"
 
 
+[[headers]]
 
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
 
