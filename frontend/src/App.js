@@ -5,7 +5,9 @@ import { MakePost } from "./components/MakePost";
 import { Post } from "./components/Post";
 import bean from "./images/bean.ico";
 
+
 export const App = () => {
+
   const [allPosts, setAllPosts] = useState([]);
   const [newPost, setNewPost] = useState("");
   const [emojiRain, setEmojiRain] = useState(false);
@@ -17,7 +19,7 @@ export const App = () => {
   }, []);
 
   const Fetchdata = () => {
-    fetch("https://coffetimeee.herokuapp.com/post")
+    fetch(`${process.env.REACT_APP_URL}/postCoffee`)
       .then((response) => response.json())
       .then((result) => setAllPosts(result));
   };
@@ -32,7 +34,7 @@ export const App = () => {
   const New = (e) => {
     e.preventDefault();
     if (newPost.length >= 5) {
-      fetch("https://coffetimeee.herokuapp.com/new", {
+      fetch(`${process.env.REACT_APP_URL}/newCoffee`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -54,7 +56,7 @@ export const App = () => {
         method: "POST"
       };
 
-      fetch(`https://coffetimeee.herokuapp.com/post/${postId}/like`, options)
+      fetch(`${process.env.REACT_APP_URL}/post/${postId}/likeCoffee`, options)
         .then((res) => res.json())
         .then((data) => {
           Fetchdata();
