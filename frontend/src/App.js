@@ -19,8 +19,7 @@ export const App = () => {
   }, []);
 
   const Fetchdata = () => {
-    fetch(`${process.env.REACT_APP_URL}/postCoffee`,
-    )
+    fetch(`${process.env.REACT_APP_URL}/postCoffee`)
       .then((response) => response.json())
       .then((result) => setAllPosts(result));
   };
@@ -55,8 +54,7 @@ export const App = () => {
   const Like = (postId) => {
     if (postId) {
       const options = {
-        method: "POST",
-      
+        method: "POST"
       };
 
       fetch(`${process.env.REACT_APP_URL}/post/${postId}/likeCoffee`, options)
