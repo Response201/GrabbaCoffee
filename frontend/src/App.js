@@ -37,8 +37,7 @@ export const App = () => {
       fetch(`${process.env.REACT_APP_URL}/newCoffee`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          'Access-Control-Allow-Origin':'*'
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({ message: newPost })
       })
