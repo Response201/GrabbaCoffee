@@ -4,14 +4,7 @@
   status = 200
   command = "CI= npm run build"
 
-
-[build]
-  base = "frontend/"
-  publish = "build/"
-  command = "npm run build"
-
-
- [[headers]]
+  [[headers]]
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
