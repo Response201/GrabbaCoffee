@@ -11,7 +11,7 @@ export const App = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [newPost, setNewPost] = useState("");
   const [emojiRain, setEmojiRain] = useState(false);
-  const url = process.env.REACT_APP_URL
+  
 
   /*   useEffect to load all existing posts when app starts */
 
@@ -20,7 +20,7 @@ export const App = () => {
   }, []);
 
   const Fetchdata = () => {
-    fetch(`${url}/postCoffee`)
+    fetch(`${process.env.REACT_APP_URL}/postCoffee`)
       .then((response) => response.json())
       .then((result) => setAllPosts(result));
   };
@@ -35,7 +35,7 @@ export const App = () => {
   const New = (e) => {
     e.preventDefault();
     if (newPost.length >= 5) {
-      fetch(`${url}/newCoffee`, {
+      fetch(`${process.env.REACT_APP_URL}/newCoffee`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -57,7 +57,7 @@ export const App = () => {
         method: "POST"
       };
 
-      fetch(`${url}/post/${postId}/likeCoffee`, options)
+      fetch(`${process.env.REACT_APP_URL}/post/${postId}/likeCoffee`, options)
         .then((res) => res.json())
         .then((data) => {
           Fetchdata();
