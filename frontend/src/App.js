@@ -19,13 +19,7 @@ export const App = () => {
   }, []);
 
   const Fetchdata = () => {
-    fetch(`${process.env.REACT_APP_URL}/postCoffee`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        'Access-Control-Allow-Origin':'*'
-      }
-  })
+    fetch(`${process.env.REACT_APP_URL}/postCoffee`)
       .then((response) => response.json())
       .then((result) => setAllPosts(result));
   };
